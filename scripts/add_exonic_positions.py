@@ -1,12 +1,12 @@
 '''
 Created on Mar 16, 2014
-
 @author: Nejc Haberman
 
-
 Script will use intersect data from: bedtools intersect -s -a regulated.exons.bed -b hg19-cds-max_exons2.bed -wb
+	
+Bedtools intersect: http://bedtools.readthedocs.io/en/latest/content/tools/intersect.html
 
-Results will be CDS genomic positions with infromation of exons on transcript level together with Alu exons 
+Results will be saved to a table with CDS genomic positions with infromation of exons on transcript level together with Alu exons.
 '''
 
 import sys
@@ -66,10 +66,7 @@ def filter(fname_in, fname_out):
     fout.close()
     fin.close()
 
-'''
-filter("/media/skgthab/storage/UCL/2015.04.27@ALUs-Jan/CDSs3/hg19-cds-gene_symbols-longest-CDS2-regulated_exons.bed","/media/skgthab/storage/UCL/2015.04.27@ALUs-Jan/CDSs3/temp.bed")
-
-'''
+# main
 if sys.argv.__len__() == 3:
     fname_in = sys.argv[1]
     fname_out = sys.argv[2]

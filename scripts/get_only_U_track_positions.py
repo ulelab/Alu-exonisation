@@ -3,14 +3,14 @@ Created on Apr 25, 2014
  
 @author: Nejc Haberman
  
- Scrit will receive a fasta format and return positions of U tracks that are longer then 4 nts and smaller then 100 nt
+Script will receive a fasta format and return positions of U tracks that are longer then 4 nucleotides and shorter then 100 nt
  
 input:
 - input_fasta
-- output_fasta
  
 output:
-- positions
+- table_of_positions
+
 '''
 import sys
  
@@ -52,17 +52,12 @@ def get_U_track_positions(fin_fname, fout_fname):
     fin.close()
     fout.close()
                
-'''
-fin_fname_fasta = "/media/skgthab/storage/UCL/2015.04.27@ALUs-Jan/HeatMap/HeatMaps8-2/U-tracks/test/test.fasta"
-fout_fname_fasta = "/media/skgthab/storage/UCL/2015.04.27@ALUs-Jan/HeatMap/HeatMaps8-2/U-tracks/test/test.csv"
-get_U_track_positions(fin_fname_fasta, fout_fname_fasta)
-'''
- 
+ # main
 if sys.argv.__len__() == 3:
     fin_fname_fasta = sys.argv[1]
     fout_fname_fasta = sys.argv[2]
     get_U_track_positions(fin_fname_fasta, fout_fname_fasta)
 else:
     #print str(sys.argv.__len__())
-    print "error:\t2 arguments are needed\n" + '\n' +"example:\t $ python k-mer_coverage.py input_fname.fasta motifs.tab"
+    print "error:\t2 arguments are needed\n"
 

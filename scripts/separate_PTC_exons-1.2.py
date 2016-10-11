@@ -8,9 +8,10 @@ and a FASTA sequence of CDS.
 
 As a result it will find a premature termination codon (PTC) in regulated exons
 
-(4) Will exons introduce a PTC (premature termination codon)?
-Predict frame of the exon based on the dominant isoform of the gene and YES if UAG,UAA,UGA within this frame (it contains a PTC)
-If it doesnt have PTC, then check if exon length not dividable by 3. If not, then write YES (it will cause a frame-shift and thereby likely to introduce PTC). If it is dividable by 3, then write NO.
+Short description of the work flow:
+  How will exons introduce a PTC (premature termination codon):
+  Predict the frame of the exon based on the dominant isoform of the gene. YES it contains a PTC if UAG,UAA,UGA within this frame.
+  If it does not have a PTC, then check if exon length not dividable by 3. If not, then YES it contains a PTC  (it will cause a frame-shift and thereby likely to introduce PTC). If it is dividable by 3, then there is no PTC
 
 '''
 
@@ -224,11 +225,7 @@ def filter(fname_in, fname_out):
     fin.close()
 
 
-'''
-
-filter("/media/nebo/SAMSUNG/UCL-backup/2015.04.27@ALUs-Jan/CDSs-PTC-regulated-exons/hg19-cds-gene_symbols-longest-CDS2-regulated_exons-positions.fasta","/media/nebo/SAMSUNG/UCL-backup/2015.04.27@ALUs-Jan/CDSs-PTC-regulated-exons/test-results.tab")
-
-'''
+# main
 if sys.argv.__len__() == 3:
     fname_in = sys.argv[1]
     fname_out = sys.argv[2]
