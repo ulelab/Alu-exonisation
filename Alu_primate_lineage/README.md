@@ -121,32 +121,3 @@ Main script [ ** Fig_5.R ]( scr/R/Fig_5.R)
 
 ###########################
 
-
-
-
-### 5.  3´ss coupled with U track lenght
-
-Main script [ ** Fig_5.R ]( scr/R/Fig_5.R)
-
-
-#### Clasification of Alu exon by the evolutive path.
-
-
-1. First we get the most distant specie in where we could find homologous Alu sequences inserted (FURTHERST)
-
-2. Then we classified the Alu elements based on the evolutionary dynamics of their 3’ss.
-
-   - ‘Emerging’ Alu exons have a 3’ss with a score less than 3 in the most distant species.
-   - ‘Stable’ Alu-exons have a 3’ss higher than 3 in the species most distant to human, and its strength increased towards human by less than 1.
-   - ‘Evolving’ Alu-exons have a 3’ss higher than 3 in the species most distant to human, and its strength in human is more than 1+(score in the distant species). For example, if the score in marmoset is 2.5, then the Alu exon is considered as ‘emerging’, if it is 4 in marmoset and 4.5 in human, then it’s considered as ‘stable’, and if it’s 4 in marmoset and 6 in human, then it’s considered as ‘evolving’.
-
-3. Plot 3 splice site strength, Longest U track on Alu, longest U track on left arm, longest U track on right arm
-
-
-
-#### Usage:
-` Rscipt .src/R/Fig_5.R `
-
-
-###Source Code Overview
-![module diagram](Data/Structure.png "Source Code Overview")
