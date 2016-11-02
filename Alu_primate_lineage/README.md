@@ -97,7 +97,7 @@ R script will merge all previous data coming from Lift over in a LONG and WIDE f
 ### 4. Classification of Alu elements by divergence or evolutionary dynamics, and analysis of their 3’ splice sites and U-tracts
 
 
-Main script [ ** Fig_5.R ]( scr/R/Fig_5.R)
+Main script [ Fig_5.R ](Alu_primate_lineage/scr/R/Fig_5.R)
 
 
 #### Clasification of Alu exon by the evolutive path.
